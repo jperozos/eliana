@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#09020b">
+  <title>¿Te puedo hacer una pregunta, Eliana? 💕</title>
+  <meta name="description" content="Una pregunta muy especial para Eliana">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo con corazones flotantes -->
+  <canvas id="hearts-canvas"></canvas>
+
+  <!-- Luces ambientales de fondo -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Contenedor Principal -->
+  <main class="main-container">
+    <!-- Tarjeta Interactiva -->
+    <div class="love-card" id="loveCard">
+      <!-- Sello / Sobre superior -->
+      <div class="envelope-badge" id="envelopeBadge" title="Un mensaje para ti">
+        <span class="envelope-icon">💌</span>
+      </div>
+
+      <!-- Fase 1: Pregunta a Eliana -->
+      <section class="card-content" id="step1">
+        <p class="subtitle" id="cardSubtitle">Tengo algo que decirte...</p>
+        <h1 class="main-title" id="mainQuestion">
+          ¿Te puedo hacer una pregunta, Eliana?
+        </h1>
+
+        <!-- Contenedor de la Imagen del Gatito -->
+        <div class="image-wrapper">
+          <img 
+            id="catImage" 
+            src="Imagenes/memegato.jpg" 
+            alt="Meme de gatito pensativo"
+            class="cat-img"
+          />
+          <div class="speech-bubble" id="speechBubble">
+            <span id="speechText">Dile que sí... 👀</span>
+          </div>
+        </div>
+
+        <!-- Zona de Botones -->
+        <div class="buttons-container" id="buttonsArea">
+          <button type="button" class="btn btn-yes" id="btnYes">
+            <span class="btn-text">SÍ</span>
+            <span class="btn-emoji">💖</span>
+          </button>
+
+          <button type="button" class="btn btn-no" id="btnNo">
+            <span class="btn-text">NO</span>
+            <span class="btn-emoji">😿</span>
+          </button>
+        </div>
+
+        <p class="hint-text" id="hintText">Piénsalo bien antes de responder 😉</p>
+      </section>
+
+      <!-- Fase 2: ¿Tú estás enojada conmigo? (con SÍ y NO) -->
+      <section class="card-content hidden" id="step2">
+        <p class="subtitle" id="step2Subtitle">Con toda sinceridad...</p>
+        <h2 class="main-title" id="angryQuestion">
+          Eliana, ¿tú estás enojada conmigo? 🥺
+        </h2>
+
+        <div class="image-wrapper">
+          <img 
+            id="angryCat" 
+            src="Imagenes/64e10f282c603.jpeg" 
+            alt="Gatito esperando respuesta"
+            class="cat-img"
+          />
+          <div class="speech-bubble" id="speechBubble2">
+            <span id="speechText2">Dime la verdad... 👀</span>
+          </div>
+        </div>
+
+        <!-- Botones SÍ y NO para la pregunta de si está enojada -->
+        <div class="buttons-container" id="buttonsAreaStep2">
+          <button type="button" class="btn btn-yes" id="btnIsAngry">
+            <span class="btn-text">SÍ 😿</span>
+          </button>
+          <button type="button" class="btn btn-no" id="btnNotAngry">
+            <span class="btn-text">NO 🥰</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Fase 3: Solo aparece cuando ella responde SÍ (¡Aquí ya NO hay ni SÍ ni NO!) -->
+      <section class="card-content hidden" id="step3">
+        <p class="subtitle">Quiero entenderte...</p>
+        <h2 class="main-title">
+          ¿Por qué estás enojada conmigo? 😿
+        </h2>
+
+        <div class="image-wrapper">
+          <img 
+            id="sadReasonCat" 
+            src="Imagenes/ed1a740976872ed49674645a696c9b71.jpg" 
+            alt="Gatito triste llorando"
+            class="cat-img"
+          />
+          <div class="speech-bubble active" id="speechBubble3">
+            <span id="speechText3">Dime qué te molestó... 😿</span>
+          </div>
+        </div>
+
+        <div class="why-angry-container" id="whyAngrySection">
+          <p class="why-angry-desc">Dime qué hice o qué te molestó para arreglarlo:</p>
+          <textarea 
+            id="whyAngryInput" 
+            class="why-angry-textarea" 
+            placeholder="Escribe aquí tu motivo..." 
+            rows="3"
+          ></textarea>
+          <button type="button" class="btn btn-yes btn-send-reason" id="btnSendReason">
+            Enviar y arreglarlo 🥺✨
+          </button>
+        </div>
+
+        <div class="final-love-message hidden" id="finalMessage">
+          ¡Uff, qué alivio! 💖 Prometo tenerlo muy presente y mejorar siempre. ¡Te quiero mucho! 🥰✨
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
