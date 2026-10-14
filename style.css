@@ -518,10 +518,10 @@ body {
    ======================================================== */
 @media (max-width: 480px) {
   body {
-    padding: 12px 8px;
-    align-items: flex-start;
-    padding-top: 28px;
-    padding-bottom: 30px;
+    padding: 16px 8px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
   }
 
   .main-container {

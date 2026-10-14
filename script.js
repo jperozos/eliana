@@ -165,15 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btnNo.classList.add('running');
     }
 
-    // Dimensiones y márgenes de la ventana
+    // Dimensiones y márgenes de la ventana (asegurando que NUNCA se salga ni quede muy abajo)
     const btnWidth = btnNo.offsetWidth || 110;
     const btnHeight = btnNo.offsetHeight || 48;
-    const padding = 25;
+    const paddingX = 24;
+    const paddingTop = 30;
+    const paddingBottom = 40; // Mayor margen abajo para que no se esconda con barras de navegación móviles
 
-    const maxX = Math.max(padding, window.innerWidth - btnWidth - padding);
-    const minX = padding;
-    const maxY = Math.max(padding, window.innerHeight - btnHeight - padding);
-    const minY = padding;
+    const maxX = Math.max(paddingX, window.innerWidth - btnWidth - paddingX);
+    const minX = paddingX;
+    const maxY = Math.max(paddingTop, window.innerHeight - btnHeight - paddingBottom);
+    const minY = paddingTop;
 
     // Obtener coordenadas del cursor
     let mouseX = window.innerWidth / 2;
@@ -206,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const distToMouse = Math.sqrt(dx * dx + dy * dy);
 
       // Distancia mínima del ratón
-      if (distToMouse < 180) continue;
+      if (distToMouse < 140) continue;
 
       // No chocar con el botón SÍ
       const overlapYes = !(
